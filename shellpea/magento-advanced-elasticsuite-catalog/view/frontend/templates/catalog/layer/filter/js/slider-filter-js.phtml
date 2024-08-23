@@ -1,0 +1,25 @@
+<?php
+declare(strict_types=1);
+
+use Hyva\Theme\Model\ViewModelRegistry;
+
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+use Hyva\Theme\ViewModel\Currency;
+
+/** @var ViewModelRegistry $viewModels */
+/** @var Template $block */
+/** @var Escaper $escaper */
+/** @var Currency $viewModelCurrency */
+
+
+$uniqueId = $block->getData('unique_id');
+
+$viewModelCurrency = $viewModels->require(Currency::class);
+$currencyCode = $viewModelCurrency->getCurrentCurrencyCode();
+
+$isPriceSlider = (strpos($block->getDataRole(), 'price') !== false);
+/* The script block deleted because Alpine doesn't support dynamic components from AJAX Request */
+?>
+
+<span class="sr-only"></span>

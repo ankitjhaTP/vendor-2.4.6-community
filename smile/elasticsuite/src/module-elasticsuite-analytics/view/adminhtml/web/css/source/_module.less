@@ -1,0 +1,72 @@
+// /**
+//  * DISCLAIMER
+//  *
+//  * Do not edit or add to this file if you wish to upgrade Smile ElasticSuite to newer
+//  * versions in the future.
+//  *
+//  *
+//  * @category  Smile
+//  * @package   Smile\ElasticsuiteAnalytics
+//  * @author    Richard BAYET <richard.bayet@smile.fr>
+//  * @copyright 2020 Smile
+//  * @license   Open Software License ("OSL") v. 3.0
+//  */
+
+.smile_elasticsuite_analytics-search-usage {
+
+    .dashboard-item-title {
+        .tooltip {
+            margin-top: inherit;
+        }
+    }
+
+    .dashboard-item-help {
+        display: none;
+    }
+
+    .dashboard-totals-list {
+        .dashboard-totals-item {
+            width: 10%;
+            text-align: center
+        }
+    }
+
+    .admin__table-primary {
+        &.dashboard-data {
+            &.terms-report {
+                .extra {
+                    display: none;
+                }
+
+                .data-grid-th {
+                    white-space: nowrap;
+                }
+
+                tbody {
+                    tr:last-child {
+                        td {
+                            border-bottom-color: @table-td__border-color;
+                        }
+                    }
+
+                    .col-search-query {
+                        text-overflow: ellipsis;
+                        overflow: clip;
+                        width: 90%;
+                        max-width: 0;
+                        white-space: nowrap;
+                    }
+
+                    .col-number {
+                        text-align: right;
+                    }
+                }
+
+                tfoot {
+                    background: none;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+}

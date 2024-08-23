@@ -1,0 +1,38 @@
+<?php
+/**
+ * Page variables tracking template
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Smile ElasticSuite to newer
+ * versions in the future.
+ *
+ * @category  Smile
+ * @package   Smile\ElasticsuiteTracker
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2020 Smile
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+?>
+<?php
+/**
+ * @var $block Smile\ElasticsuiteTracker\Block\Variables\AbstractBlock
+ * @var $secureRenderer Magento\Framework\View\Helper\SecureHtmlRenderer
+ */
+?>
+<?php
+$variables = $block->getVariables();
+if (!empty($variables)) {
+    $scriptString = "try {\n";
+
+    foreach ($variables as $varName => $value) {
+        $escapedVarName = $this->escapeJsQuote($varName);
+        $escapedValue = $block->stripTags($this->escapeJsQuote($value), null, true);
+        $scriptString .= "smileTracker.addPageVar('{$escapedVarName}', '{$escapedValue}');\n";
+    }
+
+    $scriptString .= "} catch (err) { ; }";
+
+    echo /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false);
+}
+?>

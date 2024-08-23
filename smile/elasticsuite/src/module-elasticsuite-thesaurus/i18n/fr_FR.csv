@@ -1,0 +1,65 @@
+Thesaurus,Thesaurus
+"Add New Thesaurus","Ajouter un nouveau Thésaurus"
+"Create Thesaurus","Créer Thésaurus"
+"Create a Thesaurus","Créer un Thésaurus"
+Synonym,Synonyme
+Expansion,Expansion
+Type,Type
+"Thesaurus Type","Type de thésaurus"
+"Save Thesaurus","Sauvegarder le thésaurus"
+"Save and Continue Edit","Sauvegarder et continuer à éditer"
+"Delete Thesaurus","Supprimer le thésaurus"
+"Edit a Thesaurus","Modifier le thésaurus"
+"General Information","Informations générales"
+"Thesaurus Name","Nom du thésaurus"
+Active,Activé
+Store,Vue magasin
+"Bag of words","Liste de termes"
+Synonyms,Synonymes
+"Reference Term","Terme de référence"
+"Expansion terms","Termes étendus"
+"Add Expansion Rule","Ajouter une règle d'expansion"
+"Synonym terms","Termes synonymes"
+"Add Synonym Rule","Ajouter une liste de synonymes"
+"This thesaurus no longer exists.","Ce thésaurus n'existe plus."
+"You deleted the thesaurus %1.","Vous avez supprimé le thésaurus %1."
+"Edit %1 (%2)","Édition : %1 (%2)"
+"Something went wrong while editing the thesaurus.","Une erreur s'est produite durant l'édition du thésaurus."
+"New Thesaurus (%1)","Nouveau thésaurus (%1)"
+"Please select searches.","Veuillez sélectionner un critère."
+"Total of %1 record(s) were deleted.","%1 enregistrement(s) ont été supprimé(s)."
+"You saved the thesaurus %1.","Thésaurus %1 sauvegardé."
+"Thesaurus Configuration","Configuration du thésaurus"
+"Synonyms Configuration","Configuration des synonymes"
+"Enable Synonyms Search","Activer la recherche par synonyme"
+"Synonyms Weight Divider","Pondérateur de poids pour les synonymes"
+"Query Expansions Configuration","Configuration de la recherche par expansion"
+"Enable Search Expansions","Activer la recherche par expansion"
+"Concepts Weight Divider","Pondérateur de poids pour les expansions"
+"ElasticSuite Thesaurus Indexing","Index de thésaurus ElasticSuite"
+"Reindex ElasticSuite search engine thesaurus.","Réindexer le thésaurus ElasticSuite."
+"Manage Elasticsuite Thesaurus","Gérer les Thesaurus Elasticsuite"
+Delete,Supprimer
+"Are you sure?","Êtes-vous sûr ?"
+Name,Nom
+Expansions,Expansions
+Terms,Termes
+Status,Status
+Inactive,Désactivé
+Action,Action
+Edit,Editer
+Any,Tous
+Mass Actions,Actions de masse
+Enable,Activer
+Disable,Désactiver
+Select All,Tout sélectionner
+Unselect All,Tout déselectionner
+Select Visible,Sélectionner visibles
+Unselect Visible,Désectionner visibles
+"Are you sure you want to enable the selected thesaurus?","Êtes-vous sûr(e) de vouloir activer les thésaurus sélectionnés ?"
+"Are you sure you want to disable the selected thesaurus?","Êtes-vous sûr(e) de vouloir désactiver les thésaurus sélectionnés ?"
+"Are you sure you want to delete the selected thesaurus?","Êtes-vous sûr(e) de vouloir supprimer les thésaurus sélectionnés ?"
+"Please select thesaurus to disable.","Veuillez sélectionner un thésaurus à désactiver."
+"Total of %1 thesaurus were disabled.","Un total de %1 thesaurus ont été désactivés."
+"Please select thesaurus to enable.","Veuillez sélectionner un thésaurus à activer."
+"Total of %1 thesaurus were enabled.","Un total de %1 thesaurus ont été activés."

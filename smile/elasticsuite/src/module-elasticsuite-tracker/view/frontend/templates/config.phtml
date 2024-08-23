@@ -1,0 +1,61 @@
+<?php
+/**
+ * Tracker init template
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Smile ElasticSuite to newer
+ * versions in the future.
+ *
+ * @category  Smile
+ * @package   Smile\ElasticsuiteTracker
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2020 Smile
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+?>
+<?php
+/**
+ * @var $block Smile\ElasticsuiteTracker\Block\Config
+ * @var $secureRenderer Magento\Framework\View\Helper\SecureHtmlRenderer
+ */
+?>
+<?php
+$jsonHelper = $block->getJsonHelper();
+if ($block->isEnabled()) {
+    $beaconUrl        = $this->escapeJsQuote($block->getBeaconUrl());
+    $telemetryUrl     = $this->escapeJsQuote($block->getTelemetryUrl());
+    $telemetryEnabled = $this->escapeJsQuote($block->isTelemetryEnabled());
+    $sessionConfig    = $jsonHelper->jsonEncode($block->getCookieConfig());
+    $trackerApiConfig = "";
+
+    if ($block->isUsingAPI()) {
+        $endpointUrl = $this->escapeJsQuote($block->getEndpointUrl());
+        $trackerApiConfig .= "endpointUrl:'{$endpointUrl}',";
+    }
+
+    $storeId = $this->escapeJsQuote($block->getStoreId());
+    $userConsentScript = $this->escapeJsQuote($block->getUserConsentScript());
+    $userConsentConfig = $jsonHelper->jsonEncode($block->getUserConsentConfig());
+
+    $scriptString = "//<![CDATA[\n";
+    $scriptString .= "try{";
+    $scriptString .= "smileTracker.setConfig({";
+    $scriptString .= "beaconUrl:'{$beaconUrl}',";
+    $scriptString .= "telemetryUrl:'{$telemetryUrl}',";
+    $scriptString .= "telemetryEnabled:'{$telemetryEnabled}',";
+    $scriptString .= "sessionConfig:{$sessionConfig},";
+    $scriptString .= "{$trackerApiConfig}";
+    $scriptString .= "});";
+    $scriptString .= "smileTracker.addPageVar('store_id','{$storeId}');";
+    $scriptString .= "require(['{$userConsentScript}'],function(userConsent){";
+    $scriptString .= "if(userConsent({$userConsentConfig})){";
+    $scriptString .= "smileTracker.sendTag();";
+    $scriptString .= "}";
+    $scriptString .= "});";
+    $scriptString .= "}catch(err){;}\n";
+    $scriptString .= "//]]>\n";
+
+    echo /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false);
+}
+?>

@@ -1,0 +1,24 @@
+<?php
+/**
+ * Version footer block
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Smile ElasticSuite to newer
+ * versions in the future.
+ *
+ * @category  Smile
+ * @package   Smile\ElasticsuiteCore
+ * @author    Romain Ruaud <romain.ruaud@smile.fr>
+ * @copyright 2022 Smile
+ * @license   Open Software License ("OSL") v. 3.0
+ */
+
+/** @var \Smile\ElasticsuiteCore\Block\Adminhtml\System\Version $block */
+?>
+<p class="magento-version">
+    <strong><a href="https://elasticsuite.io"><?= $block->escapeHtml(__('ElasticSuite')) ?></a></strong>
+    <?= $block->escapeHtml($block->getElasticsuiteEdition()) ?>
+    <?= $block->escapeHtml(__('ver. %1', $block->getElasticsuiteVersion())) ?>
+    <?= $block->escapeHtml(__('(on %1 ver. %2)', $block->getServerDistribution(), $block->getServerVersion())) ?>
+</p>
